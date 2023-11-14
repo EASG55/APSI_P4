@@ -6,7 +6,7 @@ import { getTardis, getDimension, getPlaneta, getPersona } from "./resolvers/get
 import { postTardis, postDimension, postPlaneta, postPersona } from "./resolvers/post.ts";
 import { putTardis, putDimension, putPlaneta, putPersona } from "./resolvers/put.ts";
 import { deleteTardis, deleteDimension, deletePlaneta, deletePersona } from "./resolvers/delete.ts";
-
+import getIntro from "./resolvers/getIntro.ts";
 const env = await load();
 
 const MONGO_URL = env.MONGO_URL || Deno.env.get("MONGO_URL");
@@ -24,7 +24,9 @@ try {
   const app = express();
   app.use(express.json());
 
-  app.get("/tardis/:id", getTardis)
+  app.get("/", getIntro)
+
+  .get("/tardis/:id", getTardis)
   .get("/dimension/:id", getDimension)
   .get("/planeta/:id", getPlaneta)
   .get("/persona/:id", getPersona)
