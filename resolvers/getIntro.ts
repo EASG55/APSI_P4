@@ -10,8 +10,6 @@ const getIntro = async (_req: Request, res: Response) => {
   
     try {
 
-        //crear un json de la tardis que muestre todos los datos guardados
-
     const json_tardis = {
         title: "Base de datos Gallifreyana de la Tardis",
         data: (await TardisModel.find()
@@ -111,7 +109,6 @@ const getIntro = async (_req: Request, res: Response) => {
         })
     };        
 
-    //mostrar json en el navegador
 
     const html = `
 
@@ -142,7 +139,7 @@ const getIntro = async (_req: Request, res: Response) => {
     </style>
     </head>
     <body>
-    <h1>Base de datos de la Tardis</h1>
+    <h1>APSI_P4: Doctor Who</h1>
     
 
 
