@@ -13,7 +13,7 @@ const MONGO_URL = env.MONGO_URL || Deno.env.get("MONGO_URL");
 console.log(MONGO_URL)
 
 if (!MONGO_URL) {
-  console.log("debes especificar la variable de entorno MONGO_URL");
+  console.log("debes especificar la variable de entorno de MONGO_URL");
   Deno.exit(1);
 }
 
