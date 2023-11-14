@@ -10,7 +10,7 @@ const getTardis = async (req: Request, res: Response) => {
 
     const tardis = await TardisModel.findById(id).populate({path:"id_dimensiones",populate:{path:"id_planetas",populate:{path:"id_personas"}}}).exec();
     if(!tardis){
-        res.status(404).send("Tardis perdida en el tiempo");
+        res.status(404).send("Tardis perdida en tiempo");
         return;
       }
       res.status(200).send({
