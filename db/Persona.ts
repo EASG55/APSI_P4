@@ -1,4 +1,4 @@
-import mongoose from "npm:mongoose@7.6.3";
+import mongoose from "mongoose";
 import { Persona } from "../types.ts";
 
 const Schema = mongoose.Schema;
@@ -10,6 +10,7 @@ const PersonaSchema = new Schema(
  );
 
 
-export type PersonaModelType = mongoose.Document & Omit<Persona, "_id">;
+export type PersonaModelType = mongoose.Document & Omit<Persona, "id">;
 
-export default mongoose.model<PersonaModelType>("personas", PersonaSchema); 
+
+export const PersonaModel = mongoose.model<PersonaModelType>("personas", PersonaSchema);
